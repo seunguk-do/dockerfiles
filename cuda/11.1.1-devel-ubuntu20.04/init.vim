@@ -12,6 +12,7 @@ Plug 'sheerun/vim-polyglot'         "a collection of language packs
 Plug 'jiangmiao/auto-pairs'         "insert closing pair automatically
 Plug 'Yggdroot/indentLine'          "shows indent line
 Plug 'tpope/vim-surround'           "stuff to help surround
+Plug 'preservim/tagbar'             "Help to find definition
 
 call plug#end()
 
@@ -19,7 +20,7 @@ call plug#end()
 colorscheme onedark
 
 " set leader key
-let g:mapleader = "\<Space>"
+let g:mapleader = "\<space>"
 
 " syntax highlighting
 if has("syntax")
@@ -51,8 +52,10 @@ lua << END
 require('lualine').setup()
 END
 
-" nerdtree configure
+" key remap
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>tj :TagbarOpen j<CR>
